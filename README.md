@@ -1,4 +1,4 @@
-<<h1 align="left">Proyecto "Adopta Huellitas"</h1>
+<h1 align="left">Proyecto "Adopta Huellitas"</h1>
 Adopta Huellitas es un refugio de animales que busca conectar en línea con potenciales adoptantes y personas que busquen contribuir a su causa, la protección y el amor por los animales.
 
 <h2 align="left">👥Miembros del equipo</h2>
