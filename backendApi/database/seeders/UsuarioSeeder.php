@@ -13,8 +13,5 @@ class UsuarioSeeder extends Seeder
     public function run(): void
     {
         //
-        $this->call([
-            MascotaSeeder::class
-        ]);
     }
 }

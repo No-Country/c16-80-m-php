@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAdministradorRequest;
 use App\Http\Requests\UpdateAdministradorRequest;
+use App\Http\Resources\AdministradorCollection;
 use App\Models\Administrador;
 
 class AdministradorController extends Controller
@@ -14,6 +15,12 @@ class AdministradorController extends Controller
     public function index()
     {
         //
+        try{
+            $administrador = Administrador::paginate();
+            return new AdministradorCollection($administrador);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**

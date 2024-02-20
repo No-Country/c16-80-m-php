@@ -9,7 +9,10 @@ class Tipo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $table = "tipo";
+    protected $fillable = [
+        'nombre'
+    ];
 
     /**
      * Get all of the mascotas for the Tipo

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMascotaRequest;
 use App\Http\Requests\UpdateMascotaRequest;
+use App\Http\Resources\MascotaCollection;
 use App\Models\Mascota;
 
 class MascotaController extends Controller
@@ -14,6 +15,12 @@ class MascotaController extends Controller
     public function index()
     {
         //
+        try {
+            $mascota = Mascota::paginate();
+            return new MascotaCollection($mascota);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTipoRequest;
 use App\Http\Requests\UpdateTipoRequest;
+use App\Http\Resources\TipoCollection;
 use App\Models\Tipo;
 
 class TipoController extends Controller
@@ -14,6 +15,12 @@ class TipoController extends Controller
     public function index()
     {
         //
+        try{
+            $tipo = Tipo::paginate();
+            return new TipoCollection($tipo);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**

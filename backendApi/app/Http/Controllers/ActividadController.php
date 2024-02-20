@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreActividadRequest;
 use App\Http\Requests\UpdateActividadRequest;
+use App\Http\Resources\ActividadCollection;
 use App\Models\Actividad;
 
 class ActividadController extends Controller
@@ -14,6 +15,12 @@ class ActividadController extends Controller
     public function index()
     {
         //
+        try {
+            $actividad = Actividad::paginate();
+            return new ActividadCollection($actividad);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**

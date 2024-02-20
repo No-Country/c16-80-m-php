@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRazaRequest;
 use App\Http\Requests\UpdateRazaRequest;
+use App\Http\Resources\RazaCollection;
 use App\Models\Raza;
 
 class RazaController extends Controller
@@ -14,6 +15,12 @@ class RazaController extends Controller
     public function index()
     {
         //
+        try{
+            $raza = Raza::paginate();
+            return new RazaCollection($raza);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**

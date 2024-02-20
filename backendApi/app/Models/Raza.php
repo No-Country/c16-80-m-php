@@ -9,7 +9,10 @@ class Raza extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $table = "raza";
+    protected $fillable = [
+        'nombre'
+    ];
 
     /**
      * Get all of the mascotas for the Raza

@@ -9,7 +9,11 @@ class Actividad extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $table = "actividad";
+
+    protected $fillable = [
+        'tipo'
+    ];
 
     /**
      * Get all of the mascotas for the Actividad

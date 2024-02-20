@@ -9,7 +9,11 @@ class Tamano extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $table = "tamano";
+    protected $fillable = [
+        'tipo',
+        'talla'
+    ];
 
     /**
      * Get all of the mascotas for the Tamano

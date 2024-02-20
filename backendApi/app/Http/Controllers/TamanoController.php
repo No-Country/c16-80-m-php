@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTamanoRequest;
 use App\Http\Requests\UpdateTamanoRequest;
+use App\Http\Resources\TamanoCollection;
 use App\Models\Tamano;
 
 class TamanoController extends Controller
@@ -14,6 +15,12 @@ class TamanoController extends Controller
     public function index()
     {
         //
+        try {
+            $tamano = Tamano::paginate();
+            return new TamanoCollection($tamano);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**

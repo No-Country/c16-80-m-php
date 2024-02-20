@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreActividadRequest extends FormRequest
 {
@@ -23,6 +24,7 @@ class StoreActividadRequest extends FormRequest
     {
         return [
             //
+            'tipo' => ['required']
         ];
     }
 }

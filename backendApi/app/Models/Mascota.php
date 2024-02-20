@@ -9,6 +9,7 @@ class Mascota extends Model
 {
     use HasFactory;
 
+    protected $table = "mascota";
     protected $fillable = [];
 
     /**

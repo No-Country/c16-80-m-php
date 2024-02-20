@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUsuarioRequest;
 use App\Http\Requests\UpdateUsuarioRequest;
+use App\Http\Resources\UsuarioCollection;
 use App\Models\Usuario;
 
 class UsuarioController extends Controller
@@ -14,6 +15,12 @@ class UsuarioController extends Controller
     public function index()
     {
         //
+        try {
+            $usuario = Usuario::paginate();
+            return new UsuarioCollection($usuario);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**
