@@ -1,0 +1,86 @@
+.modal .modal-content .title {
+    color: #402751;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.modal .modal-content .title img {
+    margin-right: 10px;
+}
+
+.modal .modal-content .fields label {
+    color: #402751;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.modal .modal-content .fields select {
+    color: #402751CC;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    background-color: transparent;
+    width: 100vw;
+    max-width: 204px;
+    height: 36px;
+    display: block;
+    border: 1px solid #81539F;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.modal .modal-content .fields select:focus {
+    outline: none;
+}
+
+.modal .modal-content .match {
+    background-color: #81539F;
+    border-radius: 8px;
+    border: 1px solid #81539F;
+    padding: 8px 16px;
+    color: #f9f8f8;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    margin: 20px 0 40px 0;
+}
+
+.modal .modal-content .match:hover {
+    background-color: transparent;
+    color: #81539F;
+}
+
+.modal .modal-content .buttons .cancel {
+    background-color: #F4F1FA;
+    border: 1px solid #F4F1FA;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #402751;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.modal .modal-content .buttons .cancel:hover {
+    background-color: #402751;
+    color: #F4F1FA;
+}
+
+.modal .modal-content .buttons .search {
+    background-color: #81539F;
+    border: 1px solid #81539F;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #F9F8F8;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.modal .modal-content .buttons .search:hover {
+    background-color: #F9F8F8;
+    color: #81539F;
+}

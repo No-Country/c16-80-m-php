@@ -1,0 +1,114 @@
+.home {
+    background-image: url('../assets/home.jpeg');
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.home h2 {
+    color: #F4F1FA;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 59.4px;
+    text-shadow: 0 4px 4px #261731;
+}
+
+.home p {
+    color: #F4F1FA;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    text-shadow: 0 4px 11px #342140;
+}
+
+.about {
+    background-color: #F4F1FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.about .container-page {
+    gap: 20px;
+}
+
+.about .container-page .description {
+    width: 37.5%;
+}
+
+.about .container-page .description h2 {
+    color: #402751;
+    font-size: 32px;
+    line-height: 35.2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about .container-page .description p {
+    color: #402751;
+    line-height: 25.2px;
+}
+
+.about .container-page .image {
+    max-width: 778px;
+}
+
+.about .container-page .image img{
+    border-radius: 16px;
+} 
+
+.contact {
+    background-image: url('../assets/contact.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .card {
+    max-width: 510px;
+    width: 100%;
+    height: 410px;
+    margin: 10vw 0;
+    background-color: #F9F8F8;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.contact .card h2 {
+    color: #81539F;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46px;
+    margin-bottom: 20px;
+}
+
+.contact .card p {
+    line-height: 25.2px;
+    color: #402751;
+    margin-bottom: 30px;
+}
+
+.contact .card a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap:  10px;
+    color: #402751;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+
+.contact .card a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
