@@ -1,0 +1,30 @@
+.result h2 {
+    margin: 30px 0 20px;
+    color: #402751;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 26.4px;
+}
+
+.result .container-page .qty {
+    color: #28194D;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.result .container-page .more {
+    background-color: #81539F;
+    border: 1px solid #81539F;
+    padding: 7px 20px;
+    border-radius: 4px;
+    color: #F9F8F8;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.result .container-page .more:hover {
+    background-color: #F9F8F8;
+    color: #81539F;
+}
