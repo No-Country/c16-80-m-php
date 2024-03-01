@@ -1,0 +1,144 @@
+.detail h1 {
+    color: #81539F;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 46.2px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.detail h2 {
+    color: #321F60;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35.2px;
+    margin: 20px 0;
+}
+
+.detail h3 {
+    color: #402751;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    margin: 15px 0;
+}
+
+.detail .slider .image {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.detail .slider .slick-next::before,
+.detail .slider .slick-prev::before {
+    font-size: 22px;
+    color: #F4F1FA;
+    text-shadow: 0 4px 4px #0000004D;
+    opacity: 0.9;
+}
+
+.detail .slider .slick-next:hover::before,
+.detail .slider .slick-prev:hover::before {
+    color: #C6B8E8;
+    opacity: 0.9;
+}
+
+.detail .slider .slick-next {
+    right: 15px;
+}
+
+.detail .slider .slick-prev {
+    left: 15px;
+    z-index: 1;
+}
+
+.detail .slider .slick-dots {
+    bottom: 25px;
+}
+
+.detail .slider .slick-dots li button::before {
+    font-size: 16px;
+    color: #F4F1FA;
+    text-shadow: 0 4px 4px #0000004D;
+    opacity: 0.8;
+}
+
+.detail .slider .slick-dots li.slick-active button::before {
+    color: #C6B8E8;
+    opacity: 0.8;
+}
+
+.detail .info .features {
+    margin: 10px 0;
+}
+
+.detail .info .features span {
+    color: #402751;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+.detail .info .features span.dot {
+    margin: 0 15px;
+}
+
+.detail .info .features span.dot::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #C6B8E8;
+    display: block;
+    border-radius: 50px;
+}
+
+.detail .info .about-pet span {
+    padding: 16px;
+    background-color: #81539F;
+    border-radius: 24px;
+    color: #F9F8F8;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 15px 0;
+}
+
+.detail .info .given ul li {
+    color: #402751;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.detail .description p {
+    color: #402751;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25.2px;
+    display: block;
+    width: 100%;
+}
+
+.detail .buttons a {
+    margin: 20px 0 0;
+    background-color: #81539F;
+    border: 1px solid #81539F;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #F9F8F8;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.detail .buttons a:hover {
+    background-color: #F9F8F8;
+    color: #81539F;
+}

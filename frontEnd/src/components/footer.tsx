@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       <div className="container-page second-menu">
-        <a href='#'><img src={Logo} alt='Adopta Patitas'/></a>
+        <a href='/'><img src={Logo} alt='Adopta Patitas'/></a>
         <div className='footer-menu'>
           <Anchor Href='#questions' Text='Preguntas frecuentes' Class='navBar'/> 
           <Anchor Href='#newsletter' Text='Nuestro newsletter' Class='navBar'/> 

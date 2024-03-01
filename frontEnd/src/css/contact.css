@@ -1,0 +1,48 @@
+.contact {
+    background-image: url('../assets/contact.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .card {
+    max-width: 510px;
+    width: 100%;
+    height: 410px;
+    margin: 10vw 0;
+    background-color: #F9F8F8;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.contact .card h2 {
+    color: #81539F;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46px;
+    margin-bottom: 20px;
+}
+
+.contact .card p {
+    line-height: 25.2px;
+    color: #402751;
+    margin-bottom: 30px;
+}
+
+.contact .card a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap:  10px;
+    color: #402751;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+
+.contact .card a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
