@@ -1,5 +1,5 @@
 import {FaBars, FaTimes } from  'react-icons/fa';
-import { AiOutlineSearch, AiFillHeart }  from "react-icons/ai";
+import { AiFillHeart }  from "react-icons/ai";
 import Anchor from "./common/anchor";
 import Logo from '../assets/logo.svg';
 import '../css/header.css';
@@ -7,11 +7,12 @@ import { useRef } from 'react';
 import Search from './search';
 
 function Header() {
-  const navRef = useRef();
-
+  const navRef: React.RefObject<HTMLElement> = useRef(null);
+  
   const showNavBar = () => {
-    if (navRef && navRef.current)
+    if (navRef && navRef.current) {
       navRef.current.classList.toggle("responsive_nav");
+    }
   };
   return (
     <header id='top'>

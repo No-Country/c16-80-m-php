@@ -2,7 +2,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import Icon from '../../assets/icon.png';
 import '../../css/modal.css';
 
-function Modal({ open, close }) {
+interface ModalProps {
+  open: boolean;
+  close: () => void; // Function to close the modal
+}
+
+function Modal({ open, close }: ModalProps) {
   return (
     <div className={`modal z-10 fixed inset-0 flex justify-center items-center bg-[#3f3a3a79] ${open ? "visible " : "invisible"} `}>
       <div className={`modal-content relative max-w-md w-full h-auto max-h-[500px] rounded-[16px] border-[#1D1C1D21] flex flex-col justify-start items-center bg-white  transition-colors border}`}>

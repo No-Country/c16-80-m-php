@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import './App.css';
 import AppHolder from './layout/AppHolder';
 import Home from './pages/Home';
@@ -10,8 +10,8 @@ import Match from './pages/Match';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppHolder />,
-    errorElement: <ErrorHolder />,
+    element: <AppHolder><Outlet /></AppHolder>,
+    errorElement: <ErrorHolder/>,
     children: [
       {
         path: '/',

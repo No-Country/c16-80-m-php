@@ -2,7 +2,11 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import { Outlet } from 'react-router-dom';
 
-function AppHolder({children}) {
+interface AppHolderProps {
+  children: React.ReactNode; // Specifies children can be any React Node
+}
+
+function AppHolder({children}:AppHolderProps) {
   return (
     <>
       <Header></Header>
