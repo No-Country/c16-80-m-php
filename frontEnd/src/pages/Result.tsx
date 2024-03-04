@@ -5,7 +5,7 @@ import '../css/result.css';
 function Result() {
   return (
     <>
-      <section className="result flex items-center justify-center">
+      <section className="result flex items-center justify-center bg-[#F4F1FA]">
         <div className="container-page">
           <h1 className="hidden">Resultados de busqueda</h1>
           <h2 className="text-center w-full">"Descubre a tu compañero ideal: perros encantadores esperando ser adopatados"</h2>
