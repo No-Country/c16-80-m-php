@@ -2,72 +2,56 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTamanoRequest;
-use App\Http\Requests\UpdateTamanoRequest;
-use App\Http\Resources\TamanoCollection;
 use App\Models\Tamano;
+use Illuminate\Http\Request;
 
 class TamanoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+
     public function index()
     {
-        //
-        try {
-            $tamano = Tamano::paginate();
-            return new TamanoCollection($tamano);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()],500);
-        }
+        $size = Tamano::all();
+        return response()->json($size, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreTamanoRequest $request)
+    public function store(Request $request)
     {
-        //
+        $size = Tamano::create($request->all());
+        return response()->json([
+            'success'=>true,
+            'data'=>$size
+        ], 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Tamano $tamano)
+    public function show(string $id)
     {
-        //
+        $size = Tamano::find($id);
+        return response()->json($size, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Tamano $tamano)
+
+    public function update(Request $request, string $id)
     {
-        //
+        $size = Tamano::find($id);
+        $size->nombre = $request->nombre;
+        $size->talla = $request->talla;
+        $size->save();
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$size
+        ], 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateTamanoRequest $request, Tamano $tamano)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Tamano $tamano)
+    public function destroy(string $id)
     {
-        //
+        Tamano::find($id)->delete();
+        return response()->json(['success'=>true], 200);
     }
 }

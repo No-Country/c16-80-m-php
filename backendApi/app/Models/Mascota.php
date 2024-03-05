@@ -4,61 +4,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Mascota extends Model
 {
     use HasFactory;
 
-    protected $table = "mascota";
-    protected $fillable = [];
+    protected $guarded=[];
 
-    /**
-     * Get the usuario that owns the Mascota
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function usuario()
-    {
-        return $this->belongsTo(Usuario::class);
+    public function user():BelongsTo{
+        return $this->belongsTo(User::class);
     }
 
-    /**
-     * Get the actividad that owns the Mascota
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function actividad()
-    {
+    public function tipo():BelongsTo{
+        return $this->belongsTo(Tipo::class);
+    }
+
+    public function actividad():BelongsTo{
         return $this->belongsTo(Actividad::class);
     }
 
-    /**
-     * Get the tamanio that owns the Mascota
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function tamanio()
-    {
-        return $this->belongsTo(Tamano::class);
-    }
-
-    /**
-     * Get the raza that owns the Mascota
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function raza()
-    {
+    public function raza():BelongsTo{
         return $this->belongsTo(Raza::class);
     }
-
-    /**
-     * Get the tipo that owns the Mascota
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function tipo()
-    {
-        return $this->belongsTo(Tipo::class);
+    public function tamano():BelongsTo{
+        return $this->belongsTo(Tamano::class);
     }
 }

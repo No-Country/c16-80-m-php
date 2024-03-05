@@ -6,31 +6,17 @@ use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\RazaController;
 use App\Http\Controllers\TamanoController;
 use App\Http\Controllers\TipoController;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::resource('/user', UserController::class);
+Route::resource('/pet', MascotaController::class);
+Route::resource('/actividad', ActividadController::class);
+Route::resource('/admin', AdministradorController::class);
+Route::resource('/raza', RazaController::class);
+Route::resource('/size', TamanoController::class);
+Route::resource('/tipo', TipoController::class);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::group(['prefix'=>'v1'],function(){
-    Route::apiResource('actividad',ActividadController::class);
-    Route::apiResource('administrador',AdministradorController::class);
-    Route::apiResource('mascota',MascotaController::class);
-    Route::apiResource('raza',RazaController::class);
-    Route::apiResource('tamano',TamanoController::class);
-    Route::apiResource('tipo',TipoController::class);
-    Route::apiResource('usuario',UsuarioController::class);
-});
+

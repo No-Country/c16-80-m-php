@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreAdministradorRequest;
-use App\Http\Requests\UpdateAdministradorRequest;
-use App\Http\Resources\AdministradorCollection;
+use App\Http\Resources\AdministradorResource;
 use App\Models\Administrador;
+use Illuminate\Http\Request;
 
 class AdministradorController extends Controller
 {
@@ -14,60 +13,50 @@ class AdministradorController extends Controller
      */
     public function index()
     {
-        //
-        try{
-            $administrador = Administrador::paginate();
-            return new AdministradorCollection($administrador);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()],500);
-        }
+        $admin = Administrador::all();
+        return AdministradorResource::collection(Administrador::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreAdministradorRequest $request)
+    public function store(Request $request)
     {
-        //
+        $admin = Administrador::create($request->all());
+        return response()->json([
+            'success'=>true,
+            'data'=>new AdministradorResource($admin)
+        ],201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Administrador $administrador)
+    public function show(string $id)
     {
-        //
+        $admin = Administrador::find($id);
+        return response()->json($admin, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Administrador $administrador)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateAdministradorRequest $request, Administrador $administrador)
+    public function update(Request $request, string $id)
     {
-        //
+        $admin = Administrador::find($id);
+        $admin->nombre =$request->nombre;
+        $admin->user=$request->user;
+        $admin->password=$request->password;
+        $admin->save();
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$admin
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Administrador $administrador)
+    public function destroy(string $id)
     {
-        //
+        Administrador::find($id)->delete();
+        return response()->json(['success'=>true],200);
     }
 }

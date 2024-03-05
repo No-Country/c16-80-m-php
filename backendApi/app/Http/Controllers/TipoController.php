@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTipoRequest;
-use App\Http\Requests\UpdateTipoRequest;
-use App\Http\Resources\TipoCollection;
 use App\Models\Tipo;
+use Illuminate\Http\Request;
 
 class TipoController extends Controller
 {
@@ -14,60 +12,48 @@ class TipoController extends Controller
      */
     public function index()
     {
-        //
-        try{
-            $tipo = Tipo::paginate();
-            return new TipoCollection($tipo);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()],500);
-        }
+        $tipo = Tipo::all();
+        return response()->json($tipo, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreTipoRequest $request)
+    public function store(Request $request)
     {
-        //
+        $tipo = Tipo::create($request->all());
+        return response()->json([
+            'success'=>true,
+            'data'=>$tipo
+        ], 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Tipo $tipo)
+    public function show(string $id)
     {
-        //
+        $tipo = Tipo::find($id);
+        return response()->json($tipo, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Tipo $tipo)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateTipoRequest $request, Tipo $tipo)
+    public function update(Request $request, string $id)
     {
-        //
+        $tipo = Tipo::find($id);
+        $tipo->nombre = $request->nombre;
+        $tipo->save();
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$tipo
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tipo $tipo)
+    public function destroy(string $id)
     {
-        //
+        Tipo::find($id)->delete();
+        return response()->json(['success'=>true], 200);
     }
 }

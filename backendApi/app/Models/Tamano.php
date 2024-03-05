@@ -4,24 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Tamano extends Model
 {
     use HasFactory;
 
-    protected $table = "tamano";
-    protected $fillable = [
-        'tipo',
-        'talla'
-    ];
+    protected $guarded=[];
 
-    /**
-     * Get all of the mascotas for the Tamano
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function mascotas()
-    {
+
+    public function mascotas():HasMany{
         return $this->hasMany(Mascota::class);
     }
 }

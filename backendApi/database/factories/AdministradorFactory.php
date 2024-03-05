@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Administrador>
@@ -17,10 +20,12 @@ class AdministradorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'user'=>$this->faker->unique()->userName(),
-            'password'=>$this->faker->unique()->password(),
-            'nombre'=> $this->faker->firstName()." ".$this->faker->lastName()
+            'nombre' => fake()->name(),
+            'user' => fake()->unique()->safeEmail(),
+            'password' => Hash::make(fake()->firstName()),
+            'email_verified_at' => now(),
+            'remember_token' => Str::random(10)
+
         ];
     }
 }

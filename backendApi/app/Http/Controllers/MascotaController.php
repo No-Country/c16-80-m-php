@@ -2,72 +2,60 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreMascotaRequest;
-use App\Http\Requests\UpdateMascotaRequest;
-use App\Http\Resources\MascotaCollection;
 use App\Models\Mascota;
+use Illuminate\Http\Request;
 
 class MascotaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
-        try {
-            $mascota = Mascota::paginate();
-            return new MascotaCollection($mascota);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()],500);
-        }
+        $pet = Mascota::all();
+        return response()->json($pet, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function store(Request $request)
     {
-        //
+        $pet = Mascota::create($request->all());
+        return response()->json([
+            'success'=>true,
+            'data'=>$pet
+        ], 201);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreMascotaRequest $request)
+
+    public function show(string $id)
     {
-        //
+        $pet = Mascota::find($id);
+        return response()->json($pet, 200);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Mascota $mascota)
+
+    public function update(Request $request, string $id)
     {
-        //
+        $pet = Mascota::find($id);
+        $pet->nombre = $request->nombre;
+        $pet->edad = $request->edad;
+        $pet->historial = $request->historial;
+        $pet->imagen = $request->imagen;
+        $pet->user_id = $request->user_id;
+        $pet->tipo_id = $request->tipo_id;
+        $pet->actividad_id = $request->actividad_id;
+        $pet->raza_id = $request->raza_id;
+        $pet->tamano_id = $request->tamano_id;
+
+        $pet->save();
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$pet
+        ], 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Mascota $mascota)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateMascotaRequest $request, Mascota $mascota)
+    public function destroy(string $id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Mascota $mascota)
-    {
-        //
+        Mascota::find($id)->delete();
+        return response()->json(['success'=>true], 200);
     }
 }

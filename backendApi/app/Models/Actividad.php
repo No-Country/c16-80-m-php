@@ -4,24 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Actividad extends Model
 {
     use HasFactory;
 
-    protected $table = "actividad";
+    protected $guarded=[];
 
-    protected $fillable = [
-        'tipo'
-    ];
-
-    /**
-     * Get all of the mascotas for the Actividad
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function mascotas()
-    {
+    public function mascotas():HasMany{
         return $this->hasMany(Mascota::class);
     }
+
+
+
 }

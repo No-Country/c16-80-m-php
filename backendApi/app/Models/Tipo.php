@@ -4,23 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Tipo extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 
-    protected $table = "tipo";
-    protected $fillable = [
-        'nombre'
-    ];
-
-    /**
-     * Get all of the mascotas for the Tipo
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function mascotas()
-    {
+    public function mascotas():HasMany{
         return $this->hasMany(Mascota::class);
     }
 }

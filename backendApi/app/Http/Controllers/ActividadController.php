@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreActividadRequest;
-use App\Http\Requests\UpdateActividadRequest;
-use App\Http\Resources\ActividadCollection;
 use App\Models\Actividad;
+use Illuminate\Http\Request;
 
 class ActividadController extends Controller
 {
@@ -14,60 +12,48 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        //
-        try {
-            $actividad = Actividad::paginate();
-            return new ActividadCollection($actividad);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()],500);
-        }
+        $act = Actividad::all();
+        return response()->json($act, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreActividadRequest $request)
+    public function store(Request $request)
     {
-        //
+        $act = Actividad::create($request->all());
+        return response()->json([
+            'success'=>true,
+            'data'=>$act
+        ], 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Actividad $actividad)
+    public function show(string $id)
     {
-        //
+        $act = Actividad::find($id);
+        return response()->json($act, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Actividad $actividad)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateActividadRequest $request, Actividad $actividad)
+    public function update(Request $request, string $id)
     {
-        //
+        $act = Actividad::find($id);
+        $act->nombre = $request->nombre;
+        $act->save();
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$act
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Actividad $actividad)
+    public function destroy(string $id)
     {
-        //
+        Actividad::find($id)->delete();
+        return response()->json(['success'=>true], 200);
     }
 }

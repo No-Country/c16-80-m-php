@@ -17,9 +17,8 @@ class TamanoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'tipo'=>$this->faker->words(),
-            'talla'=>$this->faker->randomFloat(10,30,90)
+            'nombre' => fake()->name(),
+            'talla'=>fake()->numberBetween(1,100)
         ];
     }
 }

@@ -17,8 +17,7 @@ class RazaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'nombre'=>$this->faker->name(),
+            'nombre' => fake()->name()
         ];
     }
 }

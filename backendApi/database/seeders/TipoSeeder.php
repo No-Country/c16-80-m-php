@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tipo;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,9 +13,6 @@ class TipoSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        $this->call([
-            MascotaSeeder::class
-        ]);
+        Tipo::factory()->count(5)->create();
     }
 }

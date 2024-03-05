@@ -13,7 +13,6 @@ class MascotaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        //Mascota::factory()->count(10)->hasTipo()->create();
+        Mascota::factory()->count(5)->create();
     }
 }

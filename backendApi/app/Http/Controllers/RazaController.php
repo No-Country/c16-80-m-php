@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRazaRequest;
-use App\Http\Requests\UpdateRazaRequest;
-use App\Http\Resources\RazaCollection;
 use App\Models\Raza;
+use Illuminate\Http\Request;
 
 class RazaController extends Controller
 {
@@ -14,60 +12,48 @@ class RazaController extends Controller
      */
     public function index()
     {
-        //
-        try{
-            $raza = Raza::paginate();
-            return new RazaCollection($raza);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()],500);
-        }
+        $raza = Raza::all();
+        return response()->json($raza, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreRazaRequest $request)
+    public function store(Request $request)
     {
-        //
+        $raza = Raza::create($request->all());
+        return response()->json([
+            'success'=>true,
+            'data'=>$raza
+        ], 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Raza $raza)
+    public function show(string $id)
     {
-        //
+        $raza = Raza::find($id);
+        return response()->json($raza, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Raza $raza)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateRazaRequest $request, Raza $raza)
+    public function update(Request $request, string $id)
     {
-        //
+        $raza = Raza::find($id);
+        $raza->nombre = $request->nombre;
+        $raza->save();
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$raza
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Raza $raza)
+    public function destroy(string $id)
     {
-        //
+        Raza::find($id)->delete();
+        return response()->json(['success'=>true], 200);
     }
 }

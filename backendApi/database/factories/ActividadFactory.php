@@ -17,8 +17,7 @@ class ActividadFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'tipo'=>$this->faker->word()
+            'nombre' => fake()->name()
         ];
     }
 }
