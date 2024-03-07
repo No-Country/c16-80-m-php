@@ -6,6 +6,7 @@ import Detail from './pages/Detail';
 import ErrorHolder from './layout/ErrorHolder';
 import Result from './pages/Result';
 import Match from './pages/Match';
+import Profile from './pages/Profile';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/match',
         element: <Match />
+      },
+      {
+        path: '/profile',
+        element: <Profile />
       }
     ]
   },

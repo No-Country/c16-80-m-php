@@ -96,7 +96,7 @@ header .container-page {
         opacity: 1;
         display: initial;
     }
-    nav {
+    header nav.menu-bar {
         position: fixed;
         top: 0;
         left: 0;
@@ -109,10 +109,11 @@ header .container-page {
         gap: 1.5rem;
         background-color: #F4F1FA;
         transition: 1s;
-        transform: translateY(-100vh);
+        transform: translateX(-100vw);
+        z-index: 10;
     }
 
-    .responsive_nav {
+    header nav.menu-bar.responsive_nav {
         transform: none;
     }
     .nav-close-btn {
@@ -120,5 +121,17 @@ header .container-page {
         top: 2rem;
         right: 2rem;
         color: #F9F8F8;
+    }
+    header .container-page .menu-access {
+        justify-content: right;
+    }
+    header .container-page:last-child {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    header .container-page .menu-access {
+        justify-content: center;
     }
 }

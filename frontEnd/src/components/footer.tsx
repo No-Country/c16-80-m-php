@@ -12,8 +12,8 @@ function Footer() {
         <div className='footer-menu'>
           <Anchor Href='#questions' Text='Preguntas frecuentes' Class='navBar'/> 
           <Anchor Href='#newsletter' Text='Nuestro newsletter' Class='navBar'/> 
-          <Anchor Href='#about' Text='Sobre nosotros' Class='navBar'/> 
-          <Anchor Href='#contact' Text='Contáctanos' Class='navBar'/> 
+          <Anchor Href='/#about' Text='Sobre nosotros' Class='navBar'/> 
+          <Anchor Href='/#contact' Text='Contáctanos' Class='navBar'/> 
         </div>
         <div className='social-media'>
           <a href='http://facebook.com' target='_blank'><AiOutlineFacebook color='#81539F' size={32}/></a>

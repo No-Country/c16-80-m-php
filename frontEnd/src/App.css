@@ -15,5 +15,13 @@ html,body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 15px;
+  /* flex-wrap: wrap; */
+}
+
+@media only screen and (max-width: 1440px) {
+  .container-page {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

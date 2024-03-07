@@ -48,3 +48,18 @@ footer .copyright p {
     line-height: 19.6px;
     display: block;
 }
+
+@media only screen and (max-width: 768px) {
+    footer .second-menu {
+        gap: 15px;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    footer .second-menu .footer-menu {
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+}

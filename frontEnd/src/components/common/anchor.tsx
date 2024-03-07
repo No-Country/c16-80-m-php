@@ -1,11 +1,12 @@
 interface AnchorProps {
   Href: string;
   Text: string;
-  Class?: string; // Optional class name
+  Class?: string;
+  eventClick?: () => void; // Optional class name
 }
-function Anchor({Href, Text, Class}: AnchorProps) {
+function Anchor({Href, Text, Class,eventClick}: AnchorProps) {
   return (
-    <a className={Class} href={Href}>{Text}</a>
+    <a className={Class} href={Href} onClick={eventClick}>{Text}</a>
   )
 }
 

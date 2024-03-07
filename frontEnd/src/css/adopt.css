@@ -73,3 +73,19 @@
     background-color: #F9F8F8;
     color: #81539F;
 }
+
+@media only screen and (max-width: 768px) {
+    .adopt .container-page .tab a {
+        font-size: 18px;
+    }
+
+    .adopt .container-page .result {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .adopt .container-page .tab a {
+        font-size: 12px;
+    }
+}

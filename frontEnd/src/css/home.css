@@ -17,6 +17,7 @@
     font-size: 54px;
     line-height: 59.4px;
     text-shadow: 0 4px 4px #261731;
+    text-align: center;
 }
 
 .home p {
@@ -25,6 +26,7 @@
     font-size: 24px;
     line-height: 24px;
     text-shadow: 0 4px 11px #342140;
+    text-align: center;
 }
 
 .about {
@@ -37,10 +39,12 @@
 
 .about .container-page {
     gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .about .container-page .description {
-    width: 37.5%;
+    /* width: 37.5%; */
 }
 
 .about .container-page .description h2 {
@@ -63,3 +67,9 @@
 .about .container-page .image img{
     border-radius: 16px;
 } 
+
+@media only screen and (max-width: 768px) {
+    .about .container-page {
+        grid-template-columns: initial;
+    }
+}

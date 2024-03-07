@@ -28,10 +28,10 @@ function Header() {
       </div>
       <div className='container-page'>
         <nav ref={navRef} className='menu-bar'>
-          <Anchor Href='/#top' Text='Inicio' Class='navBar'/> 
-          <Anchor Href='/#adopt' Text='Adopta' Class='navBar'/> 
-          <Anchor Href='/#about' Text='Sobre nosotros' Class='navBar'/> 
-          <Anchor Href='/#contact' Text='Contáctanos' Class='navBar'/> 
+          <Anchor Href='/#top' Text='Inicio' Class='navBar' eventClick={()=>showNavBar()}/> 
+          <Anchor Href='/#adopt' Text='Adopta' Class='navBar'  eventClick={()=>showNavBar()}/> 
+          <Anchor Href='/#about' Text='Sobre nosotros' Class='navBar'  eventClick={()=>showNavBar()}/> 
+          <Anchor Href='/#contact' Text='Contáctanos' Class='navBar'  eventClick={()=>showNavBar()}/> 
           <button className='nav-btn nav-close-btn' onClick={showNavBar}><FaTimes color='#81539F' size={24}/></button>
         </nav>
         <Search />

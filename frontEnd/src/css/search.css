@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    width: 100%;
+    max-width: 480px;
 }
 
 .search-container .search-icon {
@@ -13,7 +15,7 @@
 
 .search-container .search-input {
     max-width: 480px;
-    width: 100vw;
+    width: 100%;
     background-color: transparent;
     border: 1px solid #81539F;
     color: #402751;

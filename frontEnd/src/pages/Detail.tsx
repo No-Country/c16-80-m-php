@@ -2,6 +2,8 @@ import Slider from 'react-slick';
 import Contact from '../components/common/contact';
 import '../css/detail.css';
 import { AiFillCheckCircle } from 'react-icons/ai';
+import Image1 from '../assets/tina0.jpeg';
+import Image2 from '../assets/tina1.jpeg';
 
 function Detail() {
   var settings = {
@@ -17,18 +19,18 @@ function Detail() {
   return (
     <>
       <div className='detail flex items-center justify-center flex-col pt-5 pb-5 bg-[#F4F1FA]'>
-        <section className='container-page flex-row gap-5 items-start'>
-            <div className='slider max-w-[49%] w-full'>
+        <section className='container-page md:flex-row flex-col gap-5 items-start'>
+            <div className='slider md:max-w-[49%] w-full'>
               <Slider {...settings} >
                 <div>
-                  <img src='src/assets/tina0.jpeg' alt="Tina" className="image" />
+                  <img src={Image1} alt="Tina" className="image" />
                 </div>
                 <div>
-                  <img src='src/assets/tina1.jpeg' alt="Tina" className="image" />
+                  <img src={Image2} alt="Tina" className="image" />
                 </div>
               </Slider>
             </div>
-            <div className='info max-w-[49%] w-full flex items-start justify-between flex-col'>
+            <div className='info md:max-w-[49%] w-full flex items-start justify-between flex-col'>
               <h1 className='name'>Tina</h1>
               <div className='features flex items-center justify-start flex-wrap w-full'>
                 <span>Mestizo</span>
@@ -40,7 +42,7 @@ function Detail() {
                 <span>Muy Activo</span>
               </div>
               <h2>Cómo soy?</h2>
-              <div className='about-pet flex items-center justify-start gap-3'>
+              <div className='about-pet flex items-center justify-start gap-3 flex-wrap'>
                 <span>Bueno con gatos</span>
                 <span>Bueno con niños</span>
                 <span>Cariñoso</span>
@@ -56,10 +58,10 @@ function Detail() {
               </div>
             </div>
         </section>
-        <section className='description container-page'>
-          <h2>Mi historia</h2>
+        <section className='description container-page flex-col'>
+          <h2 className='w-full'>Mi historia</h2>
           <p>Mi pequeña historia de vida comienza en un estacionamiento, a la orilla de una transitada avenida. Me descubrí robando una bolsa de basura y regresando a mi escondite, aparentemente para saciar mi hambre, ¿verdad? ¡Error! En realidad, estaba buscando comida para un cachorro desaliñado y pequeño que había decidido proteger y cuidar (¡ a pesar de ser solo un cachorro yo misma!). Cuando mi rescatador nos encontró a ambos y nos llevó al veterinario, su principal preocupación era el bienestar de mi joven compañero, y solo quería que estuviera a salvo. Ahora que ambos estamos protegidos y fuera de peligro, y ya no tengo que ser la "mamá" desinteresada que elegí ser, ¡finalmente puedo mostrar mi verdadera personalidad al mundo!"</p>
-          <h3>Formación</h3>
+          <h3 className='w-full'>Formación</h3>
           <p>Entrenado en casa. Mi rescatador dice que soy bueno con esto, pero puede que necesite algo de entrenamiento adicional y paciencia.</p>
         </section>
         <section className='buttons container-page justify-center'>

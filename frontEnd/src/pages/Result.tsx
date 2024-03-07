@@ -6,10 +6,10 @@ function Result() {
   return (
     <>
       <section className="result flex items-center justify-center bg-[#F4F1FA]">
-        <div className="container-page">
+        <div className="container-page flex-col">
           <h1 className="hidden">Resultados de busqueda</h1>
           <h2 className="text-center w-full">"Descubre a tu compañero ideal: perros encantadores esperando ser adopatados"</h2>
-          <div className="flex items-center justify-between gap-10 flex-wrap mb-6">
+          <div className="flex items-center justify-center md:justify-between gap-10 flex-wrap mb-6">
             <Card/>
             <Card/>
             <Card/>
