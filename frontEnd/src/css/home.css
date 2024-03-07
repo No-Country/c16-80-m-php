@@ -43,9 +43,9 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.about .container-page .description {
-    /* width: 37.5%; */
-}
+/* .about .container-page .description {
+    width: 37.5%;
+} */
 
 .about .container-page .description h2 {
     color: #402751;
