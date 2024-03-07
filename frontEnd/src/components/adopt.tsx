@@ -1,15 +1,22 @@
 import Card from "./common/card";
 import '../css/adopt.css'
+import React, { useState } from "react";
 
 function Adopt() {
+  const [activeTab, setActiveTab] = useState('Disponibles');
+
+  const handleTabActive = (event:React.MouseEvent<HTMLAnchorElement>,tab:string) => {
+    event.preventDefault();
+    setActiveTab(tab);
+  };
   return (
     <section id="adopt" className="adopt">
         <div className="container-page">
           <div className="tab">
-            <a href="#">Disponibles</a>
-            <a href="#">Perros</a>
-            <a href="#">Gatos</a>
-            <a href="#">Otras mascotas</a>
+            <a href="#" className={activeTab==='Disponible'?"active":""} onClick={(event)=>{handleTabActive(event,'Disponible')}}>Disponibles</a>
+            <a href="#" className={activeTab==='Perros'?"active":""} onClick={(event)=>{handleTabActive(event,'Perros')}}>Perros</a>
+            <a href="#" className={activeTab==='Gatos'?"active":""} onClick={(event)=>{handleTabActive(event,'Gatos')}}>Gatos</a>
+            <a href="#" className={activeTab==='Otras'?"active":""} onClick={(event)=>{handleTabActive(event,'Otras')}}>Otras mascotas</a>
           </div>
           <div className="result">
             <Card/>

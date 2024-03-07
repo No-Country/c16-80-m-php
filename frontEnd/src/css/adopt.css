@@ -29,7 +29,7 @@
     text-align: center;
 }
 
-.adopt .container-page .tab a:hover {
+.adopt .container-page .tab a:hover, .adopt .container-page .tab a.active {
     opacity: 1;
     border-bottom-color: #81539F;
 }

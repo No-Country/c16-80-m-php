@@ -10,14 +10,14 @@ interface ModalProps {
 function Modal({ open, close }: ModalProps) {
   return (
     <div className={`modal z-10 fixed inset-0 flex justify-center items-center bg-[#3f3a3a79] ${open ? "visible " : "invisible"} `}>
-      <div className={`modal-content relative max-w-md w-full h-auto max-h-[500px] rounded-[16px] border-[#1D1C1D21] flex flex-col justify-start items-center bg-white  transition-colors border}`}>
+      <div className={`modal-content relative max-w-md w-full h-auto max-h-[700px] rounded-[16px] border-[#1D1C1D21] flex flex-col justify-start items-center bg-white  transition-colors border}`}>
         <div className="absolute top-6 right-6" onClick={close}>
           <AiOutlineClose />
         </div>
         <div className="title w-full p-[20px] px-[30px] flex items-center justify-start">
           <img src={Icon} alt="Búsqueda avanzada"/>Búsqueda avanzada
         </div>
-        <div className="fields justify-between items-center flex w-full p-[20px] px-[30px]">
+        <div className="fields justify-center flex-col gap-5 md:flex-row md:justify-between items-center flex w-full pb-[20px] md:p-[20px] md:px-[30px]">
           <label className="flex items-start justify-start flex-col">Especie
             <select name="especie" id="especie">
               <option value="">Cualquiera</option>
@@ -29,7 +29,7 @@ function Modal({ open, close }: ModalProps) {
             </select>
           </label>
         </div>
-        <div className="fields justify-between items-center flex w-full p-[20px] px-[30px]">
+        <div className="fields justify-center flex-col gap-5 md:flex-row md:justify-between items-center flex w-full pb-[20px] md:p-[20px] md:px-[30px]">
           <label className="flex items-start justify-start flex-col">Raza
             <select name="raza" id="raza">
               <option value="">Cualquiera</option>
